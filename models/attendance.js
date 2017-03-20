@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    var Student = sequelize.define("Student",
+    var Attendance = sequelize.define("Attendance",
     {
       student_name: {
         type: DataTypes.STRING,
@@ -17,26 +17,15 @@ module.exports = function(sequelize, DataTypes){
         }
       },
 
-      birthday:{
+      date:{
         type: DataTypes.DATEONLY,
         allowNull: false,
         validate:{
           isDate: true
         }
-      },
-
-      allergies: {
-        type: DataTypes.TEXT,
-        allowNull: true,
-        validate:{}
-      },
-
-      iep_modifications:{
-        type: DataTypes.TEXT,
-        allowNull: true,
-        validate:{}
       }
+
     });
-    return Student;
+    return Attendance;
 
 };
