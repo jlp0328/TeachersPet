@@ -1,0 +1,28 @@
+{
+  "name": "teacherspet",
+  "version": "1.0.0",
+  "description": "project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlp0328/TeachersPet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlp0328/TeachersPet/issues"
+  },
+  "homepage": "https://github.com/jlp0328/TeachersPet#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.2"
+  }
+}
