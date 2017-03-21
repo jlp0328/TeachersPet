@@ -1,7 +1,15 @@
 module.exports = function(sequelize, DataTypes){
     var Attendance = sequelize.define("Attendance",
     {
-      student_name: {
+      first_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate:{
+          len:[1, 140]
+        }
+      },
+
+      last_name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate:{
