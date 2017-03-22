@@ -1,19 +1,11 @@
 module.exports = function(sequelize, DataTypes){
     var Attendance = sequelize.define("Attendance",
     {
-      first_name: {
-        type: DataTypes.STRING,
+      student_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate:{
-          len:[1, 140]
-        }
-      },
-
-      last_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate:{
-          len:[1, 140]
+          len:[5]
         }
       },
 
@@ -34,6 +26,9 @@ module.exports = function(sequelize, DataTypes){
       }
 
     });
+
     return Attendance;
 
 };
+
+Attendance.belongsTo(Student);

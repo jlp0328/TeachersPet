@@ -1,7 +1,23 @@
 module.exports = function(sequelize, DataTypes){
     var Student = sequelize.define("Student",
     {
-      student_name: {
+      student_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate:{
+          len:[5]
+        }
+      },
+
+      first_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate:{
+          len:[1, 140]
+        }
+      },
+
+      last_name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate:{
@@ -10,11 +26,9 @@ module.exports = function(sequelize, DataTypes){
       },
 
       subject_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM,
         allowNull: false,
-        validate:{
-          len:[1, 140]
-        }
+        values: ["Period One", "Period Two", "Period Three", "Period Four", "Period Five", "Period Six", "Period Seven"]
       },
 
       birthday:{
@@ -28,15 +42,20 @@ module.exports = function(sequelize, DataTypes){
       allergies: {
         type: DataTypes.TEXT,
         allowNull: true,
-        validate:{}
       },
 
       iep_modifications:{
         type: DataTypes.TEXT,
         allowNull: true,
-        validate:{}
+      },
+
+      active_status:{
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+        allowNull: false
       }
     });
+
     return Student;
 
 };
