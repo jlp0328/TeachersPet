@@ -1,0 +1,26 @@
+<h1> Attendance </h1>
+
+<h2> Take Attendance for {{class}} </h2>
+
+ 
+	
+		
+	<form action="" method="">
+		<p> Enter Date </p> 
+		<input type="text" name="date"> </input>
+		{{#each students}}
+			<p> {{name}} </p> 
+
+			<select name="newAttendance">
+			  <option value="present">Present</option>
+			  <option value="tardy">Tardy</option>
+			  <option value="absent">Absent</option>
+			</select>
+		{{/each}}
+		<button> Submit Attendance </button>
+	</form>
+		
+	
+
+
+
