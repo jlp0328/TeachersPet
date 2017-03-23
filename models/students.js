@@ -27,13 +27,14 @@ module.exports = function(sequelize, DataTypes){
 
       subject_id: {
         type: DataTypes.ENUM,
-        allowNull: false,
-        values: ["Period One", "Period Two", "Period Three", "Period Four", "Period Five", "Period Six", "Period Seven"]
+        allowNull: true,
+        values: ["Period One", "Period Two", "Period Three", "Period Four", "Period Five", "Period Six", "Period Seven"],
+        defaultValue: "Period One"
       },
 
       birthday:{
         type: DataTypes.DATEONLY,
-        allowNull: false,
+        allowNull: true,
         validate:{
           isDate: true
         }

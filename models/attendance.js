@@ -10,11 +10,10 @@ module.exports = function(sequelize, DataTypes){
       },
 
       subject_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate:{
-          len:[1, 140]
-        }
+        type: DataTypes.ENUM,
+        allowNull: true,
+        values: ["Period One", "Period Two", "Period Three", "Period Four", "Period Five", "Period Six", "Period Seven"],
+        defaultValue: "Period One"
       },
 
       date:{
@@ -23,7 +22,14 @@ module.exports = function(sequelize, DataTypes){
         validate:{
           isDate: true
         }
-      }
+      },
+
+      presence: {
+        type: DataTypes.ENUM,
+        allowNull: false,
+        values: ["Present", "Tardy-Excused", "Tardy-Unexcused", "Absent"],
+        defaultValue: "Present"
+      },
 
     });
 
@@ -31,4 +37,3 @@ module.exports = function(sequelize, DataTypes){
 
 };
 
-Attendance.belongsTo(Student);
