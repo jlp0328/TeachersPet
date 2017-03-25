@@ -1,0 +1,19 @@
+.submitButton {
+   background: #3E4E50;
+   border: none;
+   padding: 10px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   color: white;
+   font-size: 16px;
+   font-family: 'Montserrat', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.submitButton:hover {
+   background: #D37474;
+   }
+.submitButton:active {
+   background: #D37474;
+   }
