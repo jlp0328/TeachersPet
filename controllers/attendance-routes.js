@@ -4,9 +4,82 @@ var router = express.Router();
 
 var db = require("../models");
 
-db.Attendance.hasMany(db.Student, {foreignKey:""});
+db.Student.hasMany(db.Attendance, {foreignKey:"student_id"});
+db.Attendance.belongsTo(db.Student, {foreignKey:"student_id"})
 
+module.exports = function(app){
 
+    // app.get("/attendance", function(req, res) {
+    //     db.Attendance.findAll({
+    //       include:[{model:db.Student}]
+    //     }).then(function(dbAttendance) {
+    //     res.render("attendance", {
+    //       attendance: dbAttendance});
+    //     });
+    //   });
 
+    app.get("/attendance", function(req, res) {
+        db.Student.findAll({
+          include:[{model:db.Attendance}]
+        }).then(function(dbStudent) {
+        res.render("attendance", {
+          students: dbStudent,
+          subject: dbStudent[0].subject_id
+          });
+        });
+      });
 
-module.exports = router;
+    app.get("/attendance-testing", function(req, res) {
+      db.Attendance.findAll({
+        include:[{model:db.Student}]
+      }).then(function(dbAttendance) {
+      res.json(dbAttendance)
+      });
+    });
+
+    app.post("/attendance", function(req, res) {
+       db.Attendance.bulkCreate([
+          {
+            student_id: 1,
+            subject_id: "Period One",
+            date: req.body.date
+          },
+
+                    {
+            student_id: 2,
+            subject_id: "Period One",
+            date: req.body.date
+          },
+
+                    {
+            student_id: 3,
+            subject_id: "Period One",
+            date: req.body.date
+          }
+
+        ]).then(function(dbAttendance) {
+          // We have access to the new todo as an argument inside of the callback function
+        console.log(dbAttendance);
+        // res.render("index", dbBurger);
+            res.redirect("/attendance");
+      });
+    });
+
+   // app.put("/:student_id", function(req, res) {
+   //      var condition = "student id = " + req.params.student_id;
+
+   //      console.log("condition", condition);
+
+   //       db.Attendance.update({
+   //          date: req.body.date
+   //        },
+   //        {
+   //          where:{
+   //            student_id:req.params.student_id}
+   //          }).then(function(dbAttendance) {
+   //        // res.render("index", dbBurger);
+   //            res.redirect("/attendance");
+   //        });
+   //      });
+
+}

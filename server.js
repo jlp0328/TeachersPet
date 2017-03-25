@@ -33,13 +33,9 @@ var connection = mysql.createConnection({
   database: "teacher_db"
 });
 
-// require("./controllers/attendance-routes.js")(app);
-// require("./controllers/student-routes.js")(app);
+require("./controllers/attendance-routes.js")(app);
+require("./controllers/student-routes.js")(app);
 
-var routes = require("./controllers/student-routes.js");
-app.use("/", routes);
-
-// app.listen(PORT);
 
 
 db.sequelize.sync().then(function(){
