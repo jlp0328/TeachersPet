@@ -1,0 +1,27 @@
+header {
+  height: 60px;
+  background-color: #D37474; }
+  header #logo {
+    font-family: "Happy Monkey", cursive; }
+  header #navbar {
+    font-family: "Montserrat", sans-serif; }
+
+footer {
+  background-color: #D37474;
+  font-family: "Happy Monkey", cursive;
+  color: #F7EDE2; }
+
+body {
+  background-color: #F5CAC3; }
+
+h1 {
+  font-family: "Happy Monkey", cursive;
+  color: #3E4E50;
+  font-size: 30px; }
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #3E4E50;
+  font-size: 24px; }
+
+/*# sourceMappingURL=style.css.map */
