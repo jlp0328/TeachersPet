@@ -2,16 +2,18 @@
 
 <h2> Take Attendance for {{this.subject_id}} </h2>
 
- 
-	
-		
-	<form id="attendanceForm" action="/{{this.student_id}}?_method=PUT" method="POST">
-		<p> Enter Date </p> 
-		<input type="text" name="date"> </input>
-		{{#each student}}
-			<p> {{this.student_id}} {{this.first_name}} {{this.last_name}}</p> 
 
-			<select name="newAttendance">
+
+
+	<form id="attendanceForm" action="/{{this.student_id}}?_method=PUT" method="POST">
+		<p> Enter Date </p>
+		<input type="text" name="date"> </input>
+		<input type="hidden" name="subject" value="{{subject}}">
+
+		{{#each student}}
+			<p> {{this.systemNumber}} {{this.first_name}} {{this.last_name}}</p>
+
+			<select name="newAttendance_{{this.id}}" data-studentId="{{this.id}}">
 			  <option value="present">Present</option>
 			  <option value="tardy">Tardy</option>
 			  <option value="absent">Absent</option>
@@ -19,8 +21,8 @@
 		{{/each}}
 		<button class="submitButton"> Submit Attendance </button>
 	</form>
-		
-	
+
+
 
 
 
