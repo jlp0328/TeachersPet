@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes){
         allowNull: false,
         values: ["Present", "Tardy-Excused", "Tardy-Unexcused", "Absent"],
         defaultValue: "Present"
-      },
+      }
 
     });
 
