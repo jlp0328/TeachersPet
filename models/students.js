@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes){
     var Student = sequelize.define("Student",
     {
-      student_id: {
+      systemNumber: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate:{
@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes){
         }
       },
 
-      subject_id: {
+      subject: {
         type: DataTypes.ENUM,
         allowNull: true,
         values: ["Period One", "Period Two", "Period Three", "Period Four", "Period Five", "Period Six", "Period Seven"],
