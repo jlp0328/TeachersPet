@@ -7,7 +7,8 @@ var db = require("../models");
 db.Student.hasMany(db.Attendance, {foreignKey:"student_id"});
 db.Attendance.belongsTo(db.Student, {foreignKey:"student_id"})
 
-router.get("/students", function(req, res) {
+module.exports = function(app) {
+    app.get("/students", function(req, res) {
         db.Student.findAll({
           include:[{model:db.Attendance}]
         }).then(function(dbStudent) {
@@ -16,7 +17,7 @@ router.get("/students", function(req, res) {
         });
       });
 
-router.get("/testing", function(req, res) {
+  app.get("/testing", function(req, res) {
     db.Student.findAll({
       include:[{model:db.Attendance}]
     }).then(function(dbStudent) {
@@ -24,4 +25,4 @@ router.get("/testing", function(req, res) {
     });
   });
 
-module.exports = router;
+}
