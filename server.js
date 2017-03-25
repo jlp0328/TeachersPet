@@ -30,7 +30,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "moreBurger_db"
+  database: "teacher_db"
 });
 
 // require("./controllers/attendance-routes.js")(app);
@@ -39,7 +39,7 @@ var connection = mysql.createConnection({
 var routes = require("./controllers/student-routes.js");
 app.use("/", routes);
 
-app.listen(PORT);
+// app.listen(PORT);
 
 
 db.sequelize.sync().then(function(){
