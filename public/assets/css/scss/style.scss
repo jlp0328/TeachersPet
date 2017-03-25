@@ -2,9 +2,62 @@
 @import "utils/vars";
 @import "components/header";
 @import "components/footer";
+@import "utils/helpers";
+@import "components/button";
+
+#wrapper {
+	margin: auto;
+	width: 960px;
+	min-height: 100%;
+}
+
+#welcome {
+	font-size: $welcomeHeight;
+	padding: $padding20;
+	margin: 50px;
+}
+
+
+#selections {
+	padding: $padding20;
+	width: 100%;
+	background-color: $linen;
+	margin-bottom: 400px;
+	@extend %clearfix;
+	.floatLeft {
+		float: left;
+		display: inline;
+	}
+
+	h3 {
+		margin: 5px 20px 0px 20px;
+	}
+
+	select {
+		margin: 5px 20px 0px 20px;
+		border: 0px;
+		padding: 10px;
+		font-size: 16px;
+	}
+
+}
+
+#attendanceForm {
+	select {
+		margin: 5px 20px 0px 20px;
+		border: 0px;
+		padding: 10px;
+		font-size: 16px;
+	}
+}
+
+header {
+	@extend %clearfix;
+}
 
 body {
 	background-color: $lighterPink;
+	text-align: center;
 }
 
 h1 {
@@ -16,5 +69,5 @@ h1 {
 h3 {
 	font-family: $bodyFont;
 	color: $darkGray;
-	font-size: $sectionHeadings;
+	font-size: $bodyFont;
 }

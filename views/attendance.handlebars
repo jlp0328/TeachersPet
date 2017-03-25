@@ -1,15 +1,15 @@
-<h1> Attendance </h1>
+<h1 id="welcome"> Attendance </h1>
 
-<h2> Take Attendance for {{class}} </h2>
+<h2> Take Attendance for {{this.subject_id}} </h2>
 
  
 	
 		
-	<form action="" method="">
+	<form id="attendanceForm" action="/{{this.student_id}}?_method=PUT" method="POST">
 		<p> Enter Date </p> 
 		<input type="text" name="date"> </input>
-		{{#each students}}
-			<p> {{name}} </p> 
+		{{#each student}}
+			<p> {{this.student_id}} {{this.first_name}} {{this.last_name}}</p> 
 
 			<select name="newAttendance">
 			  <option value="present">Present</option>
@@ -17,7 +17,7 @@
 			  <option value="absent">Absent</option>
 			</select>
 		{{/each}}
-		<button> Submit Attendance </button>
+		<button class="submitButton"> Submit Attendance </button>
 	</form>
 		
 	
