@@ -33,10 +33,11 @@ var connection = mysql.createConnection({
   database: "moreBurger_db"
 });
 
-require("./controllers/attendance-routes.js")(app);
-require("./controllers/student-routes.js")(app);
+// require("./controllers/attendance-routes.js")(app);
+// require("./controllers/student-routes.js")(app);
 
-// app.use("/student-roster", routes);
+var routes = require("./controllers/student-routes.js");
+app.use("/", routes);
 
 app.listen(PORT);
 
