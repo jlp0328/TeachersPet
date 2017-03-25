@@ -5,3 +5,8 @@ var router = express.Router();
 var db = require("../models");
 
 db.Attendance.hasMany(db.Student, {foreignKey:""});
+
+
+
+
+module.exports = router;
