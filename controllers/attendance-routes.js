@@ -9,15 +9,6 @@ db.Attendance.belongsTo(db.Student, {foreignKey:"student_id"})
 
 module.exports = function(app){
 
-    // app.get("/attendance", function(req, res) {
-    //     db.Attendance.findAll({
-    //       include:[{model:db.Student}]
-    //     }).then(function(dbAttendance) {
-    //     res.render("attendance", {
-    //       attendance: dbAttendance});
-    //     });
-    //   });
-
     app.get("/attendance", function(req, res) {
         db.Student.findAll({
           include:[{model:db.Attendance}]
@@ -38,31 +29,20 @@ module.exports = function(app){
     });
 
     app.post("/attendance", function(req, res) {
-       db.Attendance.bulkCreate([
-          {
-            student_id: 1,
-            subject_id: "Period One",
-            date: req.body.date
-          },
 
-                    {
-            student_id: 2,
-            subject_id: "Period One",
-            date: req.body.date
-          },
+      //  db.Attendance.bulkCreate([
+      //     {
+      //       student_id: 1,
+      //       subject_id: "Period One",
+      //       date: req.body.date
+      //     }
 
-                    {
-            student_id: 3,
-            subject_id: "Period One",
-            date: req.body.date
-          }
-
-        ]).then(function(dbAttendance) {
-          // We have access to the new todo as an argument inside of the callback function
-        console.log(dbAttendance);
-        // res.render("index", dbBurger);
-            res.redirect("/attendance");
-      });
+      //   ]).then(function(dbAttendance) {
+      //     // We have access to the new todo as an argument inside of the callback function
+      //   console.log(dbAttendance);
+      //   // res.render("index", dbBurger);
+      //       res.redirect("/attendance");
+      // });
     });
 
    // app.put("/:student_id", function(req, res) {
