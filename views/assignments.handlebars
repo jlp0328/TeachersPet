@@ -1,0 +1,54 @@
+<h1 id="welcome"> Assignments </h1>
+
+<h2> Record Grade for {{subject}} </h2>
+
+	<form id="assignmentForm" action="/assignments" method="POST">
+	<p> Enter Assignment </p>
+		<input type="text" name="task" id="task"> </input>
+		<input id="subjectId" type="hidden" name="subject" value="{{subject}}">
+	  {{#each students}}
+		<p> Enter Grade for {{this.first_name}} {{this.last_name}} </p>
+		<input type="text" name="newGrade_{{this.id}}" id="grade" data-studentId="{{this.id}}"> </input>
+		{{!-- <input id="subjectId" type="hidden" name="subject" value="{{subject}}"> --}}
+
+			{{!-- <p> {{this.systemNumber}} {{this.first_name}} {{this.last_name}}</p> --}}
+
+			{{!-- <select name="newAssignment_{{this.id}}" data-studentId="{{this.id}}">
+			  <option value="{{Assignments.assignment.values}}">{{Assignments.assignment.values}}</option>
+ --}}			  {{!-- <option value="tardy">Tardy</option> --}}
+			  {{!-- <option value="absent">Absent</option> --}}
+			{{!-- </select> --}}
+
+	  {{/each}}
+	  <button class="submitButton"> Submit Grades </button>
+	</form>
+
+// <script type="text/javascript">
+
+// $(".submitButton").on("click", function(){
+
+// var $presences = $("select");
+// var attendance= [];
+
+// var date = $("#date");
+// console.log(date);
+
+// var subject = $("#subjectId").val();
+// console.log(subject);
+
+// $presences.each(function(i,presence){
+//     var student_id = presence.attr("data-studentId");
+//     attendance.push({
+//         "student_id": student_id,
+//         "date": date,
+//         "subject":subject,
+//         "presence": presence.val()
+//     })
+// });
+
+// });
+
+// </script>
+
+
+
