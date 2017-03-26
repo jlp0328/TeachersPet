@@ -1,28 +1,39 @@
+$(function(){
+
+
 var presenceStatus = $("select");
-var attendance = [];
+console.log(presenceStatus);
+
+var classPresence = [];
+var date = $("#date");
+      console.log(date);
+
+var subject = $("#subjectId").val();
+      console.log(subject);
+
+
+
+// var student_id = presenceStatus.attr("data-studentId");
+//      console.log(student_id);
 
 $(".submitButton").on("click", function(){
 
     alert("Working!");
 
-      var date = $("#date");
-      console.log(date);
+    presenceStatus.each(function(){
 
-      var subject = $("#subjectId").val();
-      console.log(subject);
+    var student_id = presenceStatus.attr("data-studentId");
+          console.log(student_id);
 
-      presenceStatus.each(function(i,presence){
-          var student_id = presence.attr("data-studentId");
-          attendance.push({
+            classPresence.push({
               "student_id": student_id,
               "date": date,
               "subject":subject,
-              "presence": presence.val()
-          })
-
-          console.log(attendance);
+              "presence": presenceStatus.val()
+          });
       });
-
- $.post("/attendance", attendance, function(data) {});
+          console.log(classPresence);
+    $.post("/attendance", classPresence, function(data) {});
+});
 
 });

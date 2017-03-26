@@ -4,6 +4,8 @@ var router = express.Router();
 
 var db = require("../models");
 
+var classPresence = [];
+
 db.Student.hasMany(db.Attendance, {foreignKey:"student_id"});
 db.Attendance.belongsTo(db.Student, {foreignKey:"student_id"})
 
@@ -30,7 +32,7 @@ module.exports = function(app){
 
     app.post("/attendance", function(req, res) {
 
-       db.Attendance.bulkCreate(attendance).then(function(dbAttendance) {
+       db.Attendance.bulkCreate(classPresence).then(function(dbAttendance) {
         console.log(dbAttendance);
             res.redirect("/attendance");
       });
