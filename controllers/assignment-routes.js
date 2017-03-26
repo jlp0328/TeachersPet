@@ -25,8 +25,10 @@ module.exports = function(app) {
       });
     });
 
-	  app.post("/assigments", function(req, res) {
-
+	  app.post("/assignments", function(req, res) {
+	  	db.Assignments.bulkCreate(assignments).then(function(dbAssignments){
+	  		res.redirect("/assignments");
+	  	});
 	  });
 
 };
