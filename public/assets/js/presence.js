@@ -1,3 +1,4 @@
+
 $(function(){
 
 
@@ -11,8 +12,6 @@ var date = $("#date");
 var subject = $("#subjectId").val();
       console.log(subject);
 
-
-
 // var student_id = presenceStatus.attr("data-studentId");
 //      console.log(student_id);
 
@@ -20,20 +19,24 @@ $(".submitButton").on("click", function(){
 
     alert("Working!");
 
-    presenceStatus.each(function(){
+    presenceStatus.each(function(i,presence){
 
     var student_id = presenceStatus.attr("data-studentId");
           console.log(student_id);
 
             classPresence.push({
-              "student_id": student_id,
-              "date": date,
-              "subject":subject,
+              "student_id": this.student_id,
+              "date": this.date,
+              "subject":this.subject,
               "presence": presenceStatus.val()
           });
       });
           console.log(classPresence);
-    $.post("/attendance", classPresence, function(data) {});
-});
 
 });
+
+    $.post("/attendance", classPresence, function(data) {});
+
+});
+
+
