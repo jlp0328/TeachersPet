@@ -1,1 +1,39 @@
-<h1> Your Roster </h1>
+<h1 id="welcome"> Your Roster </h1>
+
+<h2> Your Class for {{subject}} </h2>
+
+	{{!-- <form id="attendanceForm" action="/students" method="POST"> --}}
+		{{!-- <p> Enter Date </p> --}}
+		{{!-- <input type="text" name="date" id="date"> </input> --}}
+		{{!-- <input id="subjectId" type="hidden" name="subject" value="{{subject}}"> --}}
+
+		{{#each students}}
+			<p> {{this.systemNumber}} {{this.first_name}} {{this.last_name}}</p>
+
+		{{/each}}
+<h2> Add A New Student</h>
+	<form class="create-update-form" action="/students" method="POST">
+	<p>Enter New Student Info</p>
+	  <div class="form-group">
+	  	<label for="ca">Student Number:</label>
+	  	<input type="text" id="ca" name="systemNumber">
+	  	<label for="ca">First Name:</label>
+	  	<input type="text" id="ca" name="first_name">
+	  	<label for="ca">Last Name:</label>
+	  	<input type="text" id="ca" name="last_name">
+	  	<label for="ca">Subject:</label>
+	  	<input type="text" id="ca" name="subject" placeholder="Period One">
+
+	  	<label for="ca">Birthday:</label>
+	  	<input type="text" id="ca" name="birthday">
+	  	<label for="ca">Allergies:</label>
+	  	<input type="text" id="ca" name="allergies">
+	  	<label for="ca">IEP:</label>
+	  	<input type="text" id="ca" name="iep_modifications">
+
+	  </div>
+		<button class="submitButton"> Add New Student </button>
+	</form>
+
+
+
