@@ -22,28 +22,32 @@
 
 <script type="text/javascript">
 
-$(".submitButton").on("click", function(){
+// var presenceStatus = $("select");
+// var attendance= [];
 
-var $presences = $("select");
-var attendance= [];
+// $(".submitButton").on("click", function(){
 
-var date = $("#date");
-console.log(date);
+// 			var date = $("#date");
+// 			console.log(date);
 
-var subject = $("#subjectId").val();
-console.log(subject);
+// 			var subject = $("#subjectId").val();
+// 			console.log(subject);
 
-$presences.each(function(i,presence){
-    var student_id = presence.attr("data-studentId");
-    attendance.push({
-        "student_id": student_id,
-        "date": date,
-        "subject":subject,
-        "presence": presence.val()
-    })
-});
+// 			presenceStatus.each(function(i,presence){
+// 			    var student_id = presence.attr("data-studentId");
+// 			    attendance.push({
+// 			        "student_id": student_id,
+// 			        "date": date,
+// 			        "subject":subject,
+// 			        "presence": presence.val()
+// 			    })
 
-});
+// 			    console.log(attendance);
+// 			});
+
+//  $.post("/attendance", attendance, function(data) {});
+
+// });
 
 </script>
 
