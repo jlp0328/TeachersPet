@@ -30,19 +30,10 @@ module.exports = function(app){
 
     app.post("/attendance", function(req, res) {
 
-      //  db.Attendance.bulkCreate([
-      //     {
-      //       student_id: 1,
-      //       subject_id: "Period One",
-      //       date: req.body.date
-      //     }
-
-      //   ]).then(function(dbAttendance) {
-      //     // We have access to the new todo as an argument inside of the callback function
-      //   console.log(dbAttendance);
-      //   // res.render("index", dbBurger);
-      //       res.redirect("/attendance");
-      // });
+       db.Attendance.bulkCreate(attendance).then(function(dbAttendance) {
+        console.log(dbAttendance);
+            res.redirect("/attendance");
+      });
     });
 
    // app.put("/:student_id", function(req, res) {
