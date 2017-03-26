@@ -34,9 +34,11 @@ module.exports = function(app) {
       birthday: req.body.birthday,
       allergies: req.body.allergies,
       iep_modifications: req.body.iep_modifications
-    })
-  })
+    }).then(function(dbStudent) {
+      res.redirect("/students");
+    });
+  });
 
 
 
-}
+};
