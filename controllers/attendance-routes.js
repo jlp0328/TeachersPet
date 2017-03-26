@@ -24,7 +24,7 @@ module.exports = function(app){
         }).then(function(dbStudent) {
         res.render("attendance", {
           students: dbStudent,
-          subject: dbStudent[0].subject_id
+          subject: dbStudent[0].subject
           });
         });
       });
