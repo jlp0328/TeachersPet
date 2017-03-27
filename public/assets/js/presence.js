@@ -32,8 +32,8 @@ $(".attendanceButton").on("click", function(){
     console.log(classPresence);
 
 
-          $.post("/attendance", classPresence, function(data) {
-          alert("Posted!");
+    $.post("/attendance", classPresence, function(data) {
+     alert("Posted!");
 });
 
 
