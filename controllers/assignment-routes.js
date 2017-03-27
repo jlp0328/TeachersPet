@@ -1,6 +1,8 @@
 var express = require("express");
 var db = require("../models");
 
+classGrades = [];
+
 db.Student.hasMany(db.Assignments, {foreignKey:"student_id"});
 db.Assignments.belongsTo(db.Student, {foreignKey:"student_id"});
 
@@ -26,7 +28,7 @@ module.exports = function(app) {
     });
 
 	  app.post("/assignments", function(req, res) {
-	  	db.Assignments.bulkCreate(assignments).then(function(dbAssignments){
+	  	db.Assignments.bulkCreate(classGrades).then(function(dbAssignments){
 	  		res.redirect("/assignments");
 	  	});
 	  });
