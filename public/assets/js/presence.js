@@ -31,9 +31,13 @@ $(".attendanceButton").on("click", function(){
     // alert("Working!");
     console.log(classPresence);
 
+
+          $.post("/attendance", classPresence, function(data) {
+          alert("Posted!");
 });
 
-    $.post("/attendance", classPresence, function(data) {});
+
+    });
 
 });
 
