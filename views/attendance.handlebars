@@ -8,9 +8,9 @@
 		<input id="subjectId" type="hidden" name="subject" value="{{subject}}">
 
 		{{#each students}}
-			<p class="student"> {{this.systemNumber}} {{this.first_name}} {{this.last_name}}</p>
+			<p> {{this.systemNumber}} {{this.first_name}} {{this.last_name}}</p>
 
-			<select name="newAttendance_{{this.id}}" data-studentId="{{this.id}}">
+			<select class="studentSelect" name="newAttendance_{{this.id}}" data-studentId="{{this.id}}">
 			  <option value="present">Present</option>
 			  <option value="tardy">Tardy</option>
 			  <option value="absent">Absent</option>
