@@ -32,9 +32,10 @@ module.exports = function(app){
 
     app.post("/attendance", function(req, res) {
 
-       db.Attendance.bulkCreate({
+       db.Attendance.bulkCreate(
+          req.body
 
-       }).then(function(dbAttendance) {
+       ).then(function(dbAttendance) {
         console.log(dbAttendance);
             res.redirect("/attendance");
       });
