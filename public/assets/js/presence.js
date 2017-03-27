@@ -8,7 +8,7 @@ var subject = $("#subjectId").val();
 
 var classPresence = [];
 
-$(".submitButton").on("click", function(){
+$(".attendanceButton").on("click", function(){
 
   var date = $("#date").val().trim();
       console.log(date);
