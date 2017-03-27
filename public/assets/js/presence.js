@@ -1,40 +1,35 @@
 
 $(function(){
 
-
-var presenceStatus = $("select");
-console.log(presenceStatus.val());
-
-var classPresence = [];
-
+// var presenceStatus = $("select");
 
 var subject = $("#subjectId").val();
       console.log(subject);
 
-// var student_id = presenceStatus.attr("data-studentId");
-//      console.log(student_id);
+var classPresence = [];
 
-$(".submitButton").on("click", function(){
+$(".attendanceButton").on("click", function(){
 
-    alert("Working!");
-
-    var date = $("#date").val().trim();
+  var date = $("#date").val().trim();
       console.log(date);
 
-    presenceStatus.each(function(i,presence){
+      // console.log(presenceStatus.val());
 
-    var student_id = presenceStatus.attr("data-studentId");
-          console.log(student_id);
+  $(".studentSelect").each(function(i,presence){
+        console.log(this);
+    var student_id = $(this).attr("data-studentId");
+        console.log(student_id);
 
             classPresence.push({
               "student_id": student_id,
+              "subject":subject,
               "date": date,
-              "subject": subject,
-              "presence": presenceStatus.val()
-          });
-
-                      console.log(classPresence[i]);
-      });
+              "presence": $(this).val()
+            });
+          // console.log(classPresence[i]);
+  });
+    // alert("Working!");
+    console.log(classPresence);
 
 
           $.post("/attendance", classPresence, function(data) {
