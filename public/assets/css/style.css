@@ -1,11 +1,11 @@
 header {
   padding: 10px;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background-color: #D37474;
   color: #F7EDE2; }
   header #logo {
-    margin: 0 0 0 30px;
+    margin: 10px 0 0 30px;
     font-size: 36px;
     font-family: "Happy Monkey", cursive;
     float: left; }
@@ -13,7 +13,7 @@ header {
     font-family: "Montserrat", sans-serif;
     float: right;
     margin-right: 30px;
-    margin-top: 10px; }
+    margin-top: 20px; }
     header #navbar a {
       color: #F7EDE2;
       text-decoration: none;
