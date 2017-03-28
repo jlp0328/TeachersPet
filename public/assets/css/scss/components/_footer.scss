@@ -2,6 +2,8 @@ footer {
 	width: 100%;
 	background-color: $darkerPink;
 	font-family: $headerFont;
+	font-size: $bodyText;
 	color: $linen;
 	padding: $padding20;
+	@extend %clearfix;
 }

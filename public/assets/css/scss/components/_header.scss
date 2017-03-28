@@ -4,6 +4,9 @@ header {
 	height: 80px;
 	background-color: $darkerPink;
 	color: $linen;
+	-webkit-box-shadow: 0 8px 6px -8px black;
+	   -moz-box-shadow: 0 8px 6px -8px black;
+	        box-shadow: 0 8px 6px -8px black;
 
 	
 	#logo {
@@ -11,6 +14,7 @@ header {
 		font-size: $logoHeight;
 		font-family: $headerFont;
 		float: left;
+		color: $linen;
 	}
 	#navbar {
 		font-family: $bodyFont;

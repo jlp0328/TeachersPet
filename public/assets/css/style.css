@@ -3,17 +3,21 @@ header {
   width: 100%;
   height: 80px;
   background-color: #D37474;
-  color: #F7EDE2; }
+  color: #F7EDE2;
+  -webkit-box-shadow: 0 8px 6px -8px black;
+  -moz-box-shadow: 0 8px 6px -8px black;
+  box-shadow: 0 8px 6px -8px black; }
   header #logo {
-    margin: 10px 0 0 30px;
+    margin: 0 0 0 30px;
     font-size: 36px;
     font-family: "Happy Monkey", cursive;
-    float: left; }
+    float: left;
+    color: #F7EDE2; }
   header #navbar {
     font-family: "Montserrat", sans-serif;
     float: right;
     margin-right: 30px;
-    margin-top: 20px; }
+    margin-top: 10px; }
     header #navbar a {
       color: #F7EDE2;
       text-decoration: none;
@@ -25,19 +29,20 @@ footer {
   width: 100%;
   background-color: #D37474;
   font-family: "Happy Monkey", cursive;
+  font-size: 18px;
   color: #F7EDE2;
   padding: 20px; }
 
-#selections, header {
+footer, .third, #selections, header {
   display: inline-block; }
-  #selections:after, header:after {
+  footer:after, .third:after, #selections:after, header:after {
     visibility: hidden;
     display: block;
     font-size: 0;
     content: " ";
     clear: both;
     height: 0; }
-  * html #selections, * html header {
+  * html footer, * html .third, * html #selections, * html header {
     height: 1%; }
 
 /* start commented backslash hack \*/
@@ -66,10 +71,19 @@ footer {
   width: 960px;
   min-height: 100%; }
 
+#cover {
+  width: 100%; }
+
 #welcome {
   font-size: 30px;
   padding: 20px;
   margin: 50px; }
+
+.third {
+  width: 30%;
+  float: left;
+  display: inline;
+  text-align: center; }
 
 #selections {
   padding: 20px;
@@ -101,6 +115,16 @@ h1 {
   font-family: "Happy Monkey", cursive;
   color: #3E4E50;
   font-size: 30px; }
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #3E4E50;
+  font-size: 24px; }
+
+p {
+  font-family: "Montserrat", sans-serif;
+  color: #3E4E50;
+  font-size: 18px; }
 
 h3 {
   font-family: "Montserrat", sans-serif;
