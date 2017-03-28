@@ -14,7 +14,7 @@ var db = require("./models");
 app.use(express.static(process.cwd() + "/public"));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true })); // KB: changed to true. false was causing a lot of problems with JSON parsing
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 

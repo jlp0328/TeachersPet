@@ -33,7 +33,7 @@ module.exports = function(app){
     app.post("/attendance", function(req, res) {
 
        db.Attendance.bulkCreate(
-          req.body
+          req.body.classPresence // KB: get array from JSON object being posted by presence.js
 
        ).then(function(dbAttendance) {
         console.log(dbAttendance);
