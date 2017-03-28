@@ -30,34 +30,35 @@ module.exports = function(app){
       });
     });
 
+    app.get("/attendance-log", function(req, res) {
+        db.Attendance.findAndCountAll({
+          include:[{model:db.Student}],
+          where:{
+            "presence":{}
+          }
+        }).then(function(dbAttendance) {
+
+        res.render("attendance", {
+
+          students: dbAttendance.count;
+
+          });
+        });
+      });
+
     app.post("/attendance", function(req, res) {
 
        db.Attendance.bulkCreate(
 
         req.body.classPresence
 
-
        ).then(function(dbAttendance) {
+
         console.log(dbAttendance);
-            res.redirect("/attendance");
+        res.redirect("/attendance");
       });
     });
 
-   // app.put("/:student_id", function(req, res) {
-   //      var condition = "student id = " + req.params.student_id;
 
-   //      console.log("condition", condition);
-
-   //       db.Attendance.update({
-   //          date: req.body.date
-   //        },
-   //        {
-   //          where:{
-   //            student_id:req.params.student_id}
-   //          }).then(function(dbAttendance) {
-   //        // res.render("index", dbBurger);
-   //            res.redirect("/attendance");
-   //        });
-   //      });
 
 }
