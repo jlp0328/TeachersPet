@@ -1,8 +1,8 @@
 
 $(function(){
 
-var subject = $("#subjectId").val();
-      console.log(subject);
+// var subject = $("#subjectId").val();
+//       console.log(subject);
 
 var classGrades = [];
 
@@ -20,8 +20,8 @@ $(".assignmentButton").on("click", function(ev){
 
             classGrades.push({
               "student_id": student_id,
-              "subject":subject,
-              "task": task,
+              // "subject":subject,
+              "assignment": task,
               "grade": $(this).val()
             });
           // console.log(classGrades[i]);

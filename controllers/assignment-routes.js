@@ -37,4 +37,19 @@ module.exports = function(app) {
 	  	});
 	  });
 
+	  //messing with gets and grades
+	  // app.get("/assignments-grades", function(req, res) {
+	  // 	db.Students.findAll({
+	  // 		include: [{model:db.Assignments,
+	  // 		where: { assignment:Sequelize.col("student.assignment") }
+	  // 		}]
+	  // 	}).then(function(dbStudent){
+	  // 		//will need to change handlebars or add new handlebars
+	  // 		res.render("assignments", {
+	  // 			students: dbStudent,
+	  // 			subject: dbStudent[0].subject
+	  // 		});
+	  // 	});
+	  // });
+
 };
