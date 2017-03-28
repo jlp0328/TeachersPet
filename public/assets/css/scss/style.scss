@@ -63,6 +63,10 @@
 	}
 }
 
+#homeNav {
+	border-right: 1px solid $darkGray;
+}
+
 header {
 	@extend %clearfix;
 }
@@ -70,6 +74,10 @@ header {
 body {
 	background-color: $lighterPink;
 	text-align: center;
+}
+
+.rightMargin{
+	margin-right: 20px;
 }
 
 h1 {
