@@ -40,7 +40,7 @@ module.exports = function(app){
 
         res.render("attendance", {
 
-          students: dbAttendance.count;
+          students: dbAttendance.count
 
           });
         });
