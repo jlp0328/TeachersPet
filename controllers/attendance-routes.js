@@ -61,4 +61,18 @@ module.exports = function(app){
 
 
 
+   //messing with assignments logs
+    //  app.get("/assignments-logs", function(req, res) {
+    //   db.Students.findAndCountAll({
+    //     include: [{model:db.Attendance,
+    //     where: { presence: "Present" }
+    //     }]
+    //   }).then(function(dbAttendance){
+    //     //will need to change handlebars or add new handlebars
+    //     res.render("assignments", {
+    //       dbAttendance.count;
+    //     });
+    //   });
+    // });
+
 }
