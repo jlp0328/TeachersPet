@@ -8,8 +8,8 @@ var subject = $("#subjectId").val();
 
 var classPresence = [];
 
-$(".attendanceButton").on("click", function(){
-
+$(".attendanceButton").on("click", function(ev){
+  ev.preventDefault();
   var date = $("#date").val().trim();
       console.log(date);
 
@@ -32,9 +32,9 @@ $(".attendanceButton").on("click", function(){
     console.log(classPresence);
 
 
-          $.post("/attendance", classPresence, function(data) {
+          $.post("/attendance", {classPresence:classPresence}, function(data) {
           alert("Posted!");
-});
+          });
 
 
     });

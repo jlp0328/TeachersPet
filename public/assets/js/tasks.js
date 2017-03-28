@@ -6,7 +6,8 @@ var subject = $("#subjectId").val();
 
 var classGrades = [];
 
-$(".assignmentButton").on("click", function(){
+$(".assignmentButton").on("click", function(ev){
+  ev.preventDefault();
 
   var task = $("#task").val().trim();
       console.log(task);
@@ -26,10 +27,10 @@ $(".assignmentButton").on("click", function(){
           // console.log(classGrades[i]);
   });
 
-    console.log(JSON.stringify(classGrades));
+    // console.log(JSON.stringify(classGrades));
+    $.post("/assignments", {classGrades:classGrades}, function(data) {});
 });
 
-    $.post("/assignments", classGrades, function(data) {});
 
 });
 
