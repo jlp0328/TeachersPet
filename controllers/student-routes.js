@@ -17,6 +17,14 @@ module.exports = function(app) {
         });
       });
 
+    app.get("/index", function(req, res) {
+        db.Student.findAll({
+          // include:[{model:db.Attendance}]
+        }).then(function(dbStudent) {
+        res.render("index", {});
+        });
+      });
+
   app.get("/testing", function(req, res) {
     db.Student.findAll({
       // include:[{model:db.Attendance}]
