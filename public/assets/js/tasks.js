@@ -13,7 +13,7 @@ $(".assignmentButton").on("click", function(ev){
       console.log(task);
 
 
-  $(".grade").each(function(i, presence){
+  $(".grade").each(function(i, grade){
         console.log(this);
     var student_id = $(this).attr("data-studentId");
         console.log(student_id);
@@ -27,7 +27,7 @@ $(".assignmentButton").on("click", function(ev){
           // console.log(classGrades[i]);
   });
 
-    // console.log(JSON.stringify(classGrades));
+    console.log(JSON.stringify(classGrades));
     $.post("/assignments", {classGrades:classGrades}, function(data) {});
 });
 
