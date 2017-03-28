@@ -33,7 +33,9 @@ module.exports = function(app){
     app.post("/attendance", function(req, res) {
 
        db.Attendance.bulkCreate(
+
         req.body.classPresence
+
 
        ).then(function(dbAttendance) {
         console.log(dbAttendance);
