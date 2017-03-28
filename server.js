@@ -36,6 +36,7 @@ var connection = mysql.createConnection({
 require("./controllers/attendance-routes.js")(app);
 require("./controllers/student-routes.js")(app);
 require("./controllers/assignment-routes.js")(app);
+require("./controllers/html-routes.js")(app);
 
 
 

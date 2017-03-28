@@ -33,13 +33,18 @@ $(".attendanceButton").on("click", function(ev){
 
 
           $.post("/attendance", {classPresence:classPresence}, function(data) {
-          alert("Posted!");
+          // alert("Posted!");
           });
 
-
+          resetForm();
 
     });
 
 });
 
+function resetForm (){
+
+  date.empty("");
+
+}
 
