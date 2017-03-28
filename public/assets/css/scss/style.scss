@@ -11,10 +11,22 @@
 	min-height: 100%;
 }
 
+#cover {
+	width: 100%
+}
+
 #welcome {
 	font-size: $welcomeHeight;
 	padding: $padding20;
 	margin: 50px;
+}
+
+.third {
+	width: 30%;
+	float: left;
+	display: inline;
+	text-align: center;
+	@extend %clearfix;
 }
 
 
@@ -64,6 +76,19 @@ h1 {
 	font-family: $headerFont;
 	color: $darkGray;
 	font-size: $welcomeHeight;
+}
+
+h2 {
+	font-family: $bodyFont;
+	color: $darkGray;
+	font-size: $sectionHeadings;
+}
+
+p {
+	font-family: $bodyFont;
+	color: $darkGray;
+	font-size: $bodyText;
+
 }
 
 h3 {
