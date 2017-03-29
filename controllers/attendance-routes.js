@@ -74,7 +74,8 @@ module.exports = function(app){
            }
         ],
 
-        where: {systemNumber: req.params.id}
+        where: {systemNumber: req.params.id
+              }
         
       }).then(function(dbAttendance){
         //will need to change handlebars or add new handlebars
@@ -82,6 +83,7 @@ module.exports = function(app){
            console.log(dbAttendance.count);
         res.render("attendance", {
            student: dbAttendance,
+           first_name: dbAttendance.first_name,
            presentDays: dbAttendance.count
           });
       });
