@@ -1,0 +1,28 @@
+<h1 id="welcome"> Attendance </h1>
+
+<h2> Days Absent </h2>
+
+{{!--   <form id="attendanceForm" action="/attendance" method="POST">
+    <p> Enter Date </p>
+    <input type="text" name="date" id="date"> </input>
+    <input id="subjectId" type="hidden" name="subject" value="{{subject}}">
+
+    {{#each students}}
+      <p> {{this.systemNumber}} {{this.first_name}} {{this.last_name}}</p>
+      <a href="/attendance-logs/{{this.systemNumber}}">Days Absent</a>
+
+      <select class="studentSelect" name="newAttendance_{{this.id}}" data-studentId="{{this.id}}">
+        <option value="present">Present</option>
+        <option value="tardy-excused">Tardy-Excused</option>
+        <option value="tardy-unexcused">Tardy-Unexcused</option>
+        <option value="absent">Absent</option>
+      </select>
+    {{/each}}
+    <br><br>
+
+    <button class="submitButton attendanceButton"> Submit Attendance </button>
+  </form>
+
+{{!-- {{#each student}} --}}
+{{!--   <p> {{}}</p> --}}
+  <p>Days Absent: {{presentDays}}</p>
