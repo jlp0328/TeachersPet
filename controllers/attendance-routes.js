@@ -59,7 +59,6 @@ module.exports = function(app){
               }
 
       }).then(function(dbAttendance){
-        //will need to change handlebars or add new handlebars
         // res.json(dbAttendance.count);
            console.log(dbAttendance);
         res.render("attendanceRecords", {
