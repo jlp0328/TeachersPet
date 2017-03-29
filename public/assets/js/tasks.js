@@ -1,9 +1,6 @@
 
 $(function(){
 
-// var subject = $("#subjectId").val();
-//       console.log(subject);
-
 var classGrades = [];
 
 $(".assignmentButton").on("click", function(ev){
@@ -20,11 +17,9 @@ $(".assignmentButton").on("click", function(ev){
 
             classGrades.push({
               "student_id": student_id,
-              // "subject":subject,
               "assignment": task,
               "grade": $(this).val()
             });
-          // console.log(classGrades[i]);
   });
 
     console.log(JSON.stringify(classGrades));
