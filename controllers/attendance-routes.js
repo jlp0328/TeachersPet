@@ -4,7 +4,6 @@ var router = express.Router();
 
 var db = require("../models");
 
-// var classPresence = [];
 
 db.Student.hasMany(db.Attendance, {foreignKey:"student_id"});
 db.Attendance.belongsTo(db.Student, {foreignKey:"student_id"})
@@ -30,23 +29,6 @@ module.exports = function(app){
       });
     });
 
-    // app.get("/attendance-log", function(req, res) {
-    //     db.Attendance.findAndCountAll({
-    //       include:[{model:db.Student}],
-    //       where:{
-
-    //         "presence":{}
-    //       }
-    //     }).then(function(dbAttendance) {
-
-    //     res.render("attendance", {
-
-    //       students: dbAttendance.count;
-
-    //       });
-    //     });
-    //   });
-
     app.post("/attendance", function(req, res) {
 
        db.Attendance.bulkCreate(
@@ -60,10 +42,7 @@ module.exports = function(app){
       });
     });
 
-
-
-   //messing with assignments logs
-     app.get("/attendance-logs/:id", function(req, res) {
+     app.get("/attendance-logs/:id/:first_name/:last_name", function(req, res) {
       db.Student.findAndCountAll({
 
         include: [
@@ -74,14 +53,19 @@ module.exports = function(app){
            }
         ],
 
-        where: {systemNumber: req.params.id}
+        where: {systemNumber: req.params.id,
+                first_name: req.params.first_name,
+                last_name: req.params.last_name
+              }
 
       }).then(function(dbAttendance){
         //will need to change handlebars or add new handlebars
         // res.json(dbAttendance.count);
-           console.log(dbAttendance.count);
+           console.log(dbAttendance);
         res.render("attendanceRecords", {
-           presentDays: dbAttendance.count
+           presentDays: dbAttendance.count,
+           first_name: req.params.first_name,
+           last_name: req.params.last_name
           });
       });
      });
