@@ -5,9 +5,13 @@
 @import "utils/helpers";
 @import "components/button";
 
+*{
+	box-sizing: border-box;
+}
+
 #wrapper {
 	margin: auto;
-	width: 960px;
+	width: 100%;
 	min-height: 100%;
 }
 
@@ -22,11 +26,15 @@
 }
 
 .third {
-	width: 30%;
+	width: 33.3%;
 	float: left;
 	display: inline;
 	text-align: center;
 	@extend %clearfix;
+}
+
+.linen {
+	background-color: $linen;
 }
 
 
@@ -76,8 +84,25 @@ body {
 	text-align: center;
 }
 
-.rightMargin{
+.rightMargin {
 	margin-right: 20px;
+}
+
+.marginSpacing {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.push-left {
+	padding-left: 80px;
+}
+
+#squirrel {
+	margin-top: 0px;
 }
 
 h1 {
@@ -97,6 +122,13 @@ p {
 	color: $darkGray;
 	font-size: $bodyText;
 
+}
+
+section {
+	padding: 50px 100px 50px 100px;
+	width: 100%;
+	display: block;
+	@extend %clearfix;
 }
 
 h3 {

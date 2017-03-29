@@ -1,14 +1,17 @@
 header {
   padding: 10px;
   width: 100%;
-  height: 80px;
+  height: 100px;
   background-color: #D37474;
   color: #F7EDE2;
   -webkit-box-shadow: 0 8px 6px -8px black;
   -moz-box-shadow: 0 8px 6px -8px black;
   box-shadow: 0 8px 6px -8px black; }
+  header #homeNav {
+    border-right: 2px solid #F7EDE2;
+    padding-right: 20px; }
   header #logo {
-    margin: 0 0 0 30px;
+    margin: 20px 0px 0px 30px;
     font-size: 36px;
     font-family: "Happy Monkey", cursive;
     float: left;
@@ -16,12 +19,12 @@ header {
   header #navbar {
     font-family: "Montserrat", sans-serif;
     float: right;
-    margin-right: 30px;
-    margin-top: 10px; }
+    margin-right: 20px;
+    margin-top: 25px; }
     header #navbar a {
       color: #F7EDE2;
       text-decoration: none;
-      margin: 10px; }
+      margin-left: 15px; }
     header #navbar a:hover {
       color: #3E4E50; }
 
@@ -33,16 +36,16 @@ footer {
   color: #F7EDE2;
   padding: 20px; }
 
-footer, .third, #selections, header {
+footer, .third, #selections, header, section {
   display: inline-block; }
-  footer:after, .third:after, #selections:after, header:after {
+  footer:after, .third:after, #selections:after, header:after, section:after {
     visibility: hidden;
     display: block;
     font-size: 0;
     content: " ";
     clear: both;
     height: 0; }
-  * html footer, * html .third, * html #selections, * html header {
+  * html footer, * html .third, * html #selections, * html header, * html section {
     height: 1%; }
 
 /* start commented backslash hack \*/
@@ -66,9 +69,12 @@ footer, .third, #selections, header {
 .submitButton:active {
   background: #D37474; }
 
+* {
+  box-sizing: border-box; }
+
 #wrapper {
   margin: auto;
-  width: 960px;
+  width: 100%;
   min-height: 100%; }
 
 #cover {
@@ -80,10 +86,13 @@ footer, .third, #selections, header {
   margin: 50px; }
 
 .third {
-  width: 30%;
+  width: 33.3%;
   float: left;
   display: inline;
   text-align: center; }
+
+.linen {
+  background-color: #F7EDE2; }
 
 #selections {
   padding: 20px;
@@ -107,9 +116,28 @@ footer, .third, #selections, header {
   padding: 10px;
   font-size: 16px; }
 
+#homeNav {
+  border-right: 1px solid #3E4E50; }
+
 body {
   background-color: #F5CAC3;
   text-align: center; }
+
+.rightMargin {
+  margin-right: 20px; }
+
+.marginSpacing {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.align-left {
+  text-align: left; }
+
+.push-left {
+  padding-left: 80px; }
+
+#squirrel {
+  margin-top: 0px; }
 
 h1 {
   font-family: "Happy Monkey", cursive;
@@ -125,6 +153,11 @@ p {
   font-family: "Montserrat", sans-serif;
   color: #3E4E50;
   font-size: 18px; }
+
+section {
+  padding: 50px 100px 50px 100px;
+  width: 100%;
+  display: block; }
 
 h3 {
   font-family: "Montserrat", sans-serif;
