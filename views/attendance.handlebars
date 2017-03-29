@@ -9,6 +9,7 @@
 
 		{{#each students}}
 			<p> {{this.systemNumber}} {{this.first_name}} {{this.last_name}}</p>
+			<a href="/attendance-logs/{{this.systemNumber}}">Days Absent</a>
 
 			<select class="studentSelect" name="newAttendance_{{this.id}}" data-studentId="{{this.id}}">
 			  <option value="present">Present</option>
@@ -22,8 +23,8 @@
 		<button class="submitButton attendanceButton"> Submit Attendance </button>
 	</form>
 
-{{!-- {{#each students}} --}}
-	<p>{{total_present_days}}</p>
+{{!-- {{#each student}} --}}
+	<p>Days Absent: {{presentDays}}</p>
 {{!-- {{/each}} --}}
 
 <script type="text/javascript">
