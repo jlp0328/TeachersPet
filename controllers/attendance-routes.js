@@ -34,6 +34,7 @@ module.exports = function(app){
     //     db.Attendance.findAndCountAll({
     //       include:[{model:db.Student}],
     //       where:{
+
     //         "presence":{}
     //       }
     //     }).then(function(dbAttendance) {
@@ -41,7 +42,6 @@ module.exports = function(app){
     //     res.render("attendance", {
 
     //       students: dbAttendance.count;
-
 
     //       });
     //     });
