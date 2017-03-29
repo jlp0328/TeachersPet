@@ -30,21 +30,21 @@ module.exports = function(app){
       });
     });
 
-    app.get("/attendance-log", function(req, res) {
-        db.Attendance.findAndCountAll({
-          include:[{model:db.Student}],
-          where:{
-            "presence":{}
-          }
-        }).then(function(dbAttendance) {
+    // app.get("/attendance-log", function(req, res) {
+    //     db.Attendance.findAndCountAll({
+    //       include:[{model:db.Student}],
+    //       where:{
+    //         presence:{"Present"}
+    //       }
+    //     }).then(function(dbAttendance) {
 
-        res.render("attendance", {
+    //     res.render("attendance", {
 
-          students: dbAttendance.count
+    //       students: dbAttendance.count
 
-          });
-        });
-      });
+    //       });
+    //     });
+    //   });
 
     app.post("/attendance", function(req, res) {
 
