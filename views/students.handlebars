@@ -13,23 +13,27 @@
 		{{/each}}
 <h2> Add A New Student</h>
 	<form class="create-update-form" action="/students" method="POST">
-	<p>Enter New Student Info</p>
+	
 	  <div class="form-group">
-	  	<label for="ca">Student Number:</label>
-	  	<input type="text" id="ca" name="systemNumber">
-	  	<label for="ca">First Name:</label>
-	  	<input type="text" id="ca" name="first_name">
-	  	<label for="ca">Last Name:</label>
-	  	<input type="text" id="ca" name="last_name">
-	  	<label for="ca">Subject:</label>
-	  	<input type="text" id="ca" name="subject" placeholder="Period One">
+	  <fieldset class="linen">
+	  	
+	  	<label for="num">Student Number:</label>
+	  	<input type="text" id="num" name="systemNumber"><br>
+	  	<label for="fn">First Name:</label>
+	  	<input type="text" id="fn" name="first_name"><br>
+	  	<label for="ln">Last Name:</label>
+	  	<input type="text" id="ln" name="last_name"><br>
+	  	<label for="sub">Subject:</label>
+	  	<input type="text" id="sub" name="subject" placeholder="Period One"><br>
 
-	  	<label for="ca">Birthday:</label>
-	  	<input type="text" id="ca" name="birthday">
-	  	<label for="ca">Allergies:</label>
-	  	<input type="text" id="ca" name="allergies">
-	  	<label for="ca">IEP:</label>
-	  	<input type="text" id="ca" name="iep_modifications">
+	  	<label for="bd">Birthday:</label>
+	  	<input type="text" id="bd" name="birthday"><br>
+	  	<label for="allergies">Allergies:</label>
+	  	<input type="text" id="allergies" name="allergies"><br>
+	  	<label for="iep">IEP:</label>
+	  	<input type="text" id="iep" name="iep_modifications"><br>
+	  </fieldset>
+	  	
 
 	  </div>
 		<button class="submitButton"> Add New Student </button>

@@ -2,21 +2,20 @@
 <html lang="en">
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Happy+Monkey|Montserrat" rel="stylesheet">
-		<!-- link to chart.js = https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js -->
-		<!-- <link href="reset.css" rel="stylesheet"> -->
+		
+		 <link href="assets/css/reset.css" rel="stylesheet"> 
 		<link href="assets/css/style.css" rel="stylesheet">
 
+        <script> require(['https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'], function(Chart){
+ var myChart = new Chart({...})
+}) </script>
+
 		<title>Teacher's Pet</title>
-		<script> 
-		require(['https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'], function(Chart){
- 			var myChart = new Chart({...})
-				}) 
-		</script>
 	</head>
 	<body>
 	<header>
-		<img src="assets/images/small-logo.png" alt="logo" width="80" height="80"> <p id="logo"> Teacher's Pet </p> 
-		<span id="navbar"> <a href="#"> HOME </a> <a href="about.html"> ABOUT </a><a href="#"> LOGOUT </a> </span> 
+		<img id="squirrel" src="assets/images/small-logo.png" alt="logo" width="80" height="80"> <p id="logo"> Teacher's Pet </p> 
+		<span id="navbar"> <a id="homeNav" href="/"> HOME</a> <a href="/index"> DEMO </a> </span> 
 	</header>
 	<div id="wrapper">
 		<h1 id="welcome"> Class Reports </h1>
@@ -32,13 +31,13 @@
 	var config = {
             type: 'line',
             data: {
-                labels: ["Student_id here?"],
+                labels: ["sudentOne", "studentTwo", "studentThree"],
                 datasets: [{
-                    label: "My First dataset",
-                    backgroundColor: window.chartColors.red,
-                    borderColor: window.chartColors.red,
+                    label: "Latest Assignment Grades",
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)' ,
+                    borderColor: 'rgba(54, 162, 235, 0.2)',
                     data: [
-                        "Grades here?"
+                        98, 90,72
                     ],
                     fill: false,
                 }, ]

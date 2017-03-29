@@ -67,9 +67,9 @@ module.exports = function(app){
       db.Student.findAndCountAll({
 
         include: [
-          { 
+          {
             model:db.Attendance,
-            where: {presence: "Present",
+            where: {presence: "Absent",
           }
            }
         ],
@@ -77,13 +77,12 @@ module.exports = function(app){
         where: {systemNumber: req.params.id
               }
         
+
       }).then(function(dbAttendance){
         //will need to change handlebars or add new handlebars
         // res.json(dbAttendance.count);
            console.log(dbAttendance.count);
-        res.render("attendance", {
-           student: dbAttendance,
-           first_name: dbAttendance.first_name,
+        res.render("attendanceRecords", {
            presentDays: dbAttendance.count
           });
       });
