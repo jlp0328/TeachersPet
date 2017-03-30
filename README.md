@@ -9,6 +9,7 @@ Screenshots
 
 Technologies
 
+![stack](https://cloud.githubusercontent.com/assets/11364825/24482529/e53808a4-14bf-11e7-910d-2a93e6a9a642.png)
 
 
 Authors
