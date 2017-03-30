@@ -36,15 +36,9 @@ $(".attendanceButton").on("click", function(ev){
           // alert("Posted!");
           });
 
-          resetForm();
 
     });
 
 });
 
-function resetForm (){
-
-  date.empty("");
-
-}
 
