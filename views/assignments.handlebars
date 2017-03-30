@@ -1,6 +1,6 @@
-<h1 id="welcome"> Assignments </h1>
 
-<h2> Record Grade for {{subject}} </h2>
+
+<h1 id="welcome"> Record assignment grades for {{subject}} </h1>
 
 	<form id="assignmentForm" action="/assignments" method="POST">
 
@@ -17,14 +17,17 @@
 
 		{{!-- <button type="submit" class=-"submitButton">Submit</button> --}}
     
-		<a href="/assignments-grades/{{this.systemNumber}}/{{this.first_name}}/{{this.last_name}}">View Grade</a>
+		<a class="smallButton" href="/assignments-grades/{{this.systemNumber}}/{{this.first_name}}/{{this.last_name}}">View Grade</a>
 
 
 	  {{/each}}
 	  <br><br>
 
-	  <button class="submitButton assignmentButton"> Submit Grades </button>
 
+	  <button class="submitButton assignmentButton"> Submit Grades </button><br><br>
+	
+
+	  
 	</form>
 
 

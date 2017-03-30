@@ -1,6 +1,9 @@
 var express = require("express");
 var db = require("../models");
 var counter = 0;
+var scores = [];
+var avg = 0;
+var sum = 0;
 
 db.Student.hasMany(db.Assignments, {foreignKey:"student_id"});
 db.Assignments.belongsTo(db.Student, {foreignKey:"student_id"});
@@ -51,32 +54,37 @@ module.exports = function(app) {
 	  		}]
 	  	}).then(function(dbGrades){
 	  		// res.json(dbGrades);
-	  	  if (counter < dbGrades.length) {
-	  		for (var i = 0; i < dbGrades.length; i++) {
-	  			scores = [];
-	  			for (var j = 0; j < dbGrades[0].Assignments.length; j++) {
+	  	  // if (counter < dbGrades.length) {	
+	  	  for (var i = 0; i < dbGrades.length; i++) {
+	  		for (var j = 0; j < dbGrades[i].Assignments.length; j++) {
+	  			if (dbGrades[i].Assignments[j] ===0) {
+	  				res.render("grade", {
+	  					grade: "No Grade",
+	  				})
+	  			}//end of if
+	  			else {
 	  				scores.push(dbGrades[i].Assignments[j].grade);
 	  				console.log(scores);
-	  			}
-	  			counter ++;
-	  		}
-	  	  }//end of if counter
-	  	  else {
-	  	  	var sum = scores.reduce(function(a, b) {
+	  			}//end of else
+	  		}//end of j loop
+	  	  }//end of i loop
+	  	 
+	  	  sum = scores.reduce(function(a, b) {
 	  	  		return a + b;
-	  	  	});
-	  	  	console.log(sum);
-	  	  	var avg = sum / scores.length;
-	  	  }
-	  	  console.log (avg);
+	  	  })/scores.length;
+	  	  
+	  	  console.log(scores);
+	  	  
 	  	  res.render("grade", {
 	  	  	first_name: req.params.first_name,
-	  	  	grade: scores.reduce(function(a, b) {
-	  	  		return a + b;
-	  	  		})/scores.length,
+	  	  	// grade: scores.reduce(function(a, b) {
+	  	  	// 	return a + b;
+	  	  	// 	})/scores.length,
+	  	  	grade: sum,
            	last_name: req.params.last_name
-	  	  });
-	  	});
+	  	  });//end of render
+	  	});//end of then
+	  clear();
 	  });
 
 	app.get("/assignments-grades/:id/:first_name/:last_name/testing", function(req, res) {
@@ -97,3 +105,11 @@ module.exports = function(app) {
 	  });
 
 };
+
+function clear () {
+	// counter = 0;
+	scores = [];
+	// avg = 0;
+	sum = 0;
+}
+
