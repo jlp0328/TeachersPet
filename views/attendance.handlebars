@@ -4,7 +4,7 @@
 
 	<form id="attendanceForm" action="/attendance" method="POST">
 		<p> Enter Date </p>
-		<input type="text" name="date" id="date"> </input>
+		<input type="text" name="date" id="date" placeholder="YYYY-MM-DD"> </input>
 		<input id="subjectId" type="hidden" name="subject" value="{{subject}}">
 
 		{{#each students}}
