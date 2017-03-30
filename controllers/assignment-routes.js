@@ -2,7 +2,6 @@ var express = require("express");
 var db = require("../models");
 var counter = 0;
 
-
 db.Student.hasMany(db.Assignments, {foreignKey:"student_id"});
 db.Assignments.belongsTo(db.Student, {foreignKey:"student_id"});
 
@@ -37,34 +36,8 @@ module.exports = function(app) {
 	  	});
 	  });
 
-	  //messing with gets and grades
-	  // app.get("/assignments-grades/:id/:first_name/:last_name", function(req, res) {
-	  // 	db.Student.findAndCountAll({
 
-	  // 		include: [
-	  // 		  {
-	  // 		  	model:db.Assignments,
-	  // 		  	 where: {grade: "99"
-   //        }
-	  // 			// attributes: [ db.Sequelize.fn("SUM", db.Sequelize.col("grade"), db.Sequelize.literal("+"), db.Sequelize("action.assignment.value")), "grade" ]
-	  // 		}],
-
-	  // 		where: {systemNumber: req.params.id,
-   //              first_name: req.params.first_name,
-   //              last_name: req.params.last_name
-   //            }
-
-	  // 	}).then(function(dbGrades){
-	  // 		res.json(dbGrades);
-	  // 		// res.render("grade", {
-	  // 		// 	grade: dbGrades.count,
-   //   //       		first_name: req.params.first_name,
-   //   //       		last_name: req.params.last_name
-	  // 		// });
-	  // 	});
-	  // });
-
-	    app.get("/assignments-grades/:id/:first_name/:last_name", function(req, res) {
+	app.get("/assignments-grades/:id/:first_name/:last_name", function(req, res) {
 	  	db.Student.findAll({
 
 	  		where: {systemNumber: req.params.id,
@@ -95,33 +68,20 @@ module.exports = function(app) {
 	  	  else {
 	  	  	var sum = scores.reduce(function(a, b) {
 	  	  		return a + b;
-	  	  	},0);
+	  	  	});
+	  	  	console.log(sum);
 	  	  	var avg = sum / scores.length;
 	  	  }
-	  	  console.log (sum/scores.length);
+	  	  console.log (avg);
 	  	  res.render("grade", {
-	  	  	grade: avg
-	  	  } );
-	  		// var scores = [];
-	  		// for (var j = 0; j < dbGrades[0].Assignments.length; j++) {
-	  		// 		scores.push(dbGrades.Assignments[j].grade);
-	  		// 		console.log(scores);
-	  		// }
-	  		// console.log(scores);
-	  		
-	  	 //  	var sum = scores.reduce(function(a, b) {
-	  	 //  		return a + b;
-	  	 //  	});
-	  	 //  	var avg = sum / scores.length;
-	  	  
-	  	 //  console.log (avg);
-	  	 //  res.render("grade", {
-	  	 //  	grade: avg
-	  	 //  } );
-
-	  		
+	  	  	first_name: req.params.first_name,
+	  	  	grade: scores.reduce(function(a, b) {
+	  	  		return a + b;
+	  	  		})/scores.length,
+           	last_name: req.params.last_name
+	  	  });
+	  			
 	  	});
 	  });
-
 
 };
