@@ -33,7 +33,7 @@ module.exports = function(app) {
 	  	db.Assignments.bulkCreate(
 
 	  		  req.body.classGrades
-	  		  
+
 	  		).then(function(dbAssignments){
 	  		res.redirect("/assignments");
 	  	});
