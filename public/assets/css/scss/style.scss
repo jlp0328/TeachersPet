@@ -5,7 +5,7 @@
 @import "utils/helpers";
 @import "components/button";
 
-*{
+* {
 	box-sizing: border-box;
 }
 
@@ -60,6 +60,10 @@
 		font-size: 16px;
 	}
 
+}
+
+.center {
+	text-align: center;
 }
 
 #attendanceForm {
