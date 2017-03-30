@@ -3,7 +3,7 @@
 <h2> Record Grade for {{subject}} </h2>
 
 	<form id="assignmentForm" action="/assignments" method="POST">
-	  	
+
 	  	<p> Enter Assignment </p>
 		<input type="text" name="task" id="task"> </input>
 		{{!-- <input id="subjectId" type="hidden" name="subject" value="{{subject}}">
@@ -12,16 +12,16 @@
 
 		<p> Enter Grade for {{this.first_name}} {{this.last_name}} </p>
 
-		<input type="text" name="newGrade_{{this.id}}" class="grade" 
+		<input type="text" name="newGrade_{{this.id}}" class="grade"
 		data-studentId="{{this.id}}"> </input>
-		<button type="submit" class=-"submitButton">Submit</button>
+		{{!-- <button type="submit" class=-"submitButton">Submit</button> --}}
 
 
 	  {{/each}}
 	  <br><br>
 
 	  <button class="submitButton assignmentButton"> Submit Grades </button>
-	
+
 	</form>
 
 
