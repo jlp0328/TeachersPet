@@ -30,7 +30,7 @@ module.exports = function(app) {
 	  	db.Assignments.bulkCreate(
 
 	  		  req.body.classGrades
-	  		  
+
 	  		).then(function(dbAssignments){
 	  		res.redirect("/assignments");
 	  	});
@@ -51,7 +51,7 @@ module.exports = function(app) {
 	  		}]
 	  	}).then(function(dbGrades){
 	  		// res.json(dbGrades);
-	  	  if (counter < dbGrades.length) {	
+	  	  if (counter < dbGrades.length) {
 	  		for (var i = 0; i < dbGrades.length; i++) {
 	  			scores = [];
 	  			for (var j = 0; j < dbGrades[0].Assignments.length; j++) {
@@ -75,7 +75,7 @@ module.exports = function(app) {
 	  	  		return a + b;
 	  	  		})/scores.length,
            	last_name: req.params.last_name
-	  	  });		
+	  	  });
 	  	});
 	  });
 
