@@ -11,12 +11,14 @@
 			<p> {{this.systemNumber}} {{this.first_name}} {{this.last_name}}</p>
 
 		{{/each}}
+
+		<div class="linen">
 <h2> Add A New Student</h>
 	<form class="create-update-form" action="/students" method="POST">
-	
+
 	  <div class="form-group">
-	  <fieldset class="linen">
-	  	
+
+
 	  	<label for="num">Student Number:</label>
 	  	<input type="text" id="num" name="systemNumber"><br>
 	  	<label for="fn">First Name:</label>
@@ -32,12 +34,13 @@
 	  	<input type="text" id="allergies" name="allergies"><br>
 	  	<label for="iep">IEP:</label>
 	  	<input type="text" id="iep" name="iep_modifications"><br>
-	  </fieldset>
-	  	
 
-	  </div>
+
+
+	  </div><br><br>
 		<button class="submitButton"> Add New Student </button>
 	</form>
+	</div><br><br>
 
 
 
