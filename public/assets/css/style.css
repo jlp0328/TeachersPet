@@ -110,6 +110,10 @@ footer, .third, #selections, header, section {
   display: inline;
   text-align: center; }
 
+  .mod-third {
+    width: 32%;
+  }
+
 .linen {
   background-color: #F7EDE2; }
 
@@ -156,7 +160,7 @@ body {
   text-align: left; }
 
 .push-left {
-  padding-left: 150px; }
+  padding-left: 80px; }
 
 #squirrel {
   margin-top: 0px; }
