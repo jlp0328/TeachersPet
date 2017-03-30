@@ -6,9 +6,8 @@ Screenshots
 
 ![Home](https://cloud.githubusercontent.com/assets/11364825/24481627/9ba34362-14b9-11e7-93ae-2d959c85794e.png)
 
-Include a one or two screenshots of main UI/UX points of your app and how it solves a problem
 
-Technologies used
+Technologies
 
 You can give a brief listing of the technologies you've learned and applied here
 
@@ -53,12 +52,8 @@ function awesomeThing() {
 }
 Authors
 
-John Doe - Initial work - John Doe
-See also the list of contributors who participated in this project.
 
-License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
 
 Acknowledgments
 
