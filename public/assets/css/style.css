@@ -110,6 +110,9 @@ footer, .third, #selections, header, section {
     padding: 10px;
     font-size: 16px; }
 
+.center {
+  text-align: center; }
+
 #attendanceForm select {
   margin: 5px 20px 0px 20px;
   border: 0px;
