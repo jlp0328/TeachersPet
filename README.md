@@ -4,7 +4,7 @@ Teacher's Pet
 
 ## Project Description:
 
-Teacher’s Pet allows teachers to tote this application around campus instead of having to have a traditional gradebook. This application allows them to keep all important student information in one place, including: class rosters, attendance, grades/assignments, IEP modifications, and more.
+Teacher’s Pet allows teachers to tote this application around campus instead of having to have a traditional gradebook. This application allows them to store important student information all in one place, including: class rosters, attendance, grades/assignments, IEP modifications, and more.
 
 ## Screenshots:
 
