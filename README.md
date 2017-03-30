@@ -19,3 +19,7 @@ Teacher’s Pet allows teachers to tote this application around campus instead o
 ## Authors:
 
 ![teampic](https://cloud.githubusercontent.com/assets/11364825/24482479/6ad24372-14bf-11e7-885b-b24a68607ff4.png)
+
+  ### Heather: https://github.com/seamanhd
+  ### Jamie: https://github.com/jlp0328
+  ### Meredith: https://github.com/erbium87
