@@ -47,12 +47,8 @@ module.exports = function(app) {
 	  		include: [
 	  		  {
 	  		  	model:db.Assignments,
-	  		  	// attributes: ["assignment", [db.sequelize.fn("AVG", db.sequelize.col("grade")), "count"]],
-	  		  	// group: "grade",
 	  		  	order: [[db.sequelize.fn("AVG", db.sequelize.col("grade")), "grade_AVG"]]
 	  		}]
-
-
 	  	}).then(function(dbGrades){
 	  		// res.json(dbGrades);
 	  	  if (counter < dbGrades.length) {	
@@ -79,8 +75,24 @@ module.exports = function(app) {
 	  	  		return a + b;
 	  	  		})/scores.length,
            	last_name: req.params.last_name
-	  	  });
-	  			
+	  	  });		
+	  	});
+	  });
+
+	app.get("/assignments-grades/:id/:first_name/:last_name/testing", function(req, res) {
+	  	db.Student.findAll({
+
+	  		where: {systemNumber: req.params.id,
+                first_name: req.params.first_name,
+                last_name: req.params.last_name
+              },
+	  		include: [
+	  		  {
+	  		  	model:db.Assignments,
+	  		  	order: [[db.sequelize.fn("AVG", db.sequelize.col("grade")), "grade_AVG"]]
+	  		}]
+	  	}).then(function(dbGrades){
+	  		res.json(dbGrades);
 	  	});
 	  });
 
